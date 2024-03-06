@@ -14,14 +14,24 @@ val quarkusPlatformArtifactId: String by project
 val quarkusPlatformVersion: String by project
 
 dependencies {
-    implementation("io.quarkiverse.renarde:quarkus-renarde:3.0.9")
     implementation(enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}"))
+
     implementation("io.quarkus:quarkus-kotlin")
     implementation("io.quarkus:quarkus-resteasy-reactive-jackson")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-    implementation("io.quarkus:quarkus-arc")
     implementation("io.quarkus:quarkus-resteasy-reactive")
+    implementation("io.quarkus:quarkus-arc")
+    implementation("io.quarkus:quarkus-oidc")
+    implementation("io.quarkus:quarkus-hibernate-reactive-panache")
+    implementation("io.quarkus:quarkus-reactive-pg-client")
+    implementation("io.quarkus:quarkus-flyway")
+    implementation("io.quarkus:quarkus-scheduler")
+    implementation("io.quarkus:quarkus-jdbc-postgresql")
+
     testImplementation("io.quarkus:quarkus-junit5")
+
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    implementation("com.trendyol:kediatr-quarkus-starter:3.0.0")
+
     testImplementation("io.rest-assured:rest-assured")
 }
 
